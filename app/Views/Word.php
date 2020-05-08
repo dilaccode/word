@@ -2,14 +2,17 @@
     <!-- word container -->
     <div class="word-container w3-border-top w3-border-left w3-border-right w3-border-blue">
         <!-- word -->
-        <div class='w3-jumbo w3-text-blue upper'><?php echo $word ?></div>
+        <div class='w3-jumbo w3-text-blue upper'><?php echo $wordObj->word ?></div>
         <!-- definition -->
         <div class='w3-xxlarge'>
-            A <a class='' href="/public/home/word/<?php echo $word ?>123">long</a> strip of cloth bearing a slogan or design, hung in a public place or carried in a demonstration or procession.
+            <!-- A <a class='' href="/public/home/word/<?php echo $word ?>123">long</a> -->
+            <?php echo $wordObj->mean ?>
         </div>
         <!-- stat -->
         <div class="w3-large w3-border-top w3-border-blue w3-left-align w3-padding-small">
-            You saw <span class="upper"><?php echo $word ?></span> 135 times.
+            You saw <span class="upper">
+            <?php echo $wordObj->word." ".$wordObj->count; ?>
+            </span> times.
         </div>
     </div> 
     <!-- /.word container -->

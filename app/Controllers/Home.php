@@ -6,19 +6,23 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		echo view('Header');
-		echo view('Home');
-		echo view('Footer');
-
 		$model = new WordModel();
-		var_dump($model->getWords());
+		$data = array(
+			'LowSeeWords'=> $model->GetLowSeeWords(),
+		);
+
+		echo view('Header');
+		echo view('Home',$data);
+		echo view('Footer');
 	}
 
 	public function word($word='empty')
 	{
+		$model = new WordModel();
 		$data= array(
-			'word'=>$word,
+			'wordObj'=> $model->GetWord($word),
 		);
+		
 		echo view('Header');
 		echo view('Word',$data);
 		echo view('Footer');

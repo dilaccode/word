@@ -9,9 +9,12 @@
             <span class="w3-large">(click on words below)</span>
         </div>
         <div class="w3-xxlarge upper w3-text-blue">
-            <a class='' href="/public/home/word/<?php echo $word ?>123">long</a>
-            <a class='' href="/public/home/word/<?php echo $word ?>123">long</a>
-            <a class='' href="/public/home/word/<?php echo $word ?>123">long</a>
+            <?php foreach ($LowSeeWords as $Word): ?>
+                <a href="/public/home/word/<?php echo $Word->word ?>">
+                    <?php echo $Word->word ?>
+                </a>
+                <br>
+            <?php endforeach; ?>
         </div>
     </div>
     <!-- level -->

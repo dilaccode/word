@@ -5,9 +5,11 @@
         <div class='<?php echo $classWordSize ?> w3-text-blue upper'><?php echo $wordObj->word ?></div>
   
         <!-- definition -->
-        <div class='w3-xxlarge'>
-            <!-- A <a class='' href="/public/home/word/<?php echo $word ?>123">long</a> -->
-            <?php echo $wordObj->meanWithLinks ?>
+        <div class='mean w3-xxlarge'>
+            <?php echo $wordObj->mean; ?>
+        </div>
+        <div class='meanWithLinks w3-xxlarge'>
+            <?php echo $wordObj->meanWithLinks; ?>
         </div>
         <!-- stat -->
         <div class="w3-large w3-border-top w3-border-blue w3-left-align w3-padding-small">

@@ -14,6 +14,9 @@ a {
     /* text-decoration: none; */
     /* font-weight: bold; */
 }
+.upper {
+    text-transform: uppercase;
+}
 </style>
 <!-- / CSS small -->
 

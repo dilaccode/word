@@ -12,6 +12,7 @@ run command on Terminal (any location):<br>
 ```bash
 cd c:\ & RMDIR "C:\xampp\htdocs" /S /Q & MKDIR C:\xampp\htdocs & cd C:\xampp\htdocs & git clone https://github.com/dilaccode/word.git .
 ```
+run again if **fail**
 # Relate project
 [Word count idea](https://github.com/quangcongvn/word-count)
 # test zone

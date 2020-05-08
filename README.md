@@ -13,6 +13,11 @@ run command on Terminal (any location):<br>
 cd c:\ & RMDIR "C:\xampp\htdocs" /S /Q & MKDIR C:\xampp\htdocs & cd C:\xampp\htdocs & git clone https://github.com/dilaccode/word.git .
 ```
 run again if **fail**
+# database , backup work
+bk database,  commit code, db to git
+```bash
+C:\xampp\mysql\bin\mysqldump.exe --user=root --password= --host=localhost --port=3306 --result-file="C:\xampp\htdocs\database\word_database.sql" --databases "word" & git add -A &git commit -m 'work backup: code, db' & git push
+```
 # Relate project
 [Word count idea](https://github.com/quangcongvn/word-count)
 # test zone

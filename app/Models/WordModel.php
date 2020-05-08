@@ -17,13 +17,46 @@ class WordModel extends Model
         $wordObj->count++;
         $result = $this->db->query("update word set count=$wordObj->count
         where id=$wordObj->id");  
+        // process mean to array mark exist status
+        $wordObj->meanArrayStatus=$this->GetExistWordsStatus($wordObj->mean);
+        //
         return $wordObj;
     }
-    public function GetLowSeeWords(){
-        $limit = 5;
+    /// return mean (sentence) as array (word,isExist)
+    public function GetExistWordsStatus($mean){
+        $searchArr = array("(",")",".",",",";","  ");
+        $replaceArr = array(" "," "," "," "," "," ");
+        // split
+        $mean = str_replace($searchArr,$replaceArr,$mean);
+        $meanArr = explode(" ",$mean);
+        $meanArrResult = array();
+        foreach($meanArr as $Word){
+            if(strlen($Word)>0){
+                array_push($meanArrResult,(object)array(
+                    'word'=>$Word,
+                    'isExist' => $this->checkWorkExist($Word),
+                ));
+            }
+        }
+        return $meanArrResult;
+    }
+    /// return TRUE/FALSE
+    private function checkWorkExist($word){
+        $wordObj =  $this->db->query("select * from word
+        where word='$word'")->getRow(1);
+        return isset($wordObj);
+    }
+    public function GetLowSeeWords($amount=5){
         return $this->db->query("select word,count from word 
         where count = (select min(count) from word)
-        limit $limit")
+        limit $amount")
         ->getResult();
     }
+    public function GetStats(){
+        return $this->db->query("select min(count) as level,
+         max(count) as highest 
+         from word")
+        ->getRow(1);
+    }
+    
 }

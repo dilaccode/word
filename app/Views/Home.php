@@ -19,8 +19,8 @@
     </div>
     <!-- level -->
     <div class="w3-border-left w3-border-right w3-border-green w3-large w3-left-align w3-padding-small">
-        Your level: 4.<br>
-        Highest word saw: 499.
+        Your level: <?php echo $Stats->level ?>.<br>
+        Highest word saw: <?php echo $Stats->highest ?>.
     </div>
 
 

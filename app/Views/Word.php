@@ -7,7 +7,7 @@
         <!-- definition -->
         <div class='w3-xxlarge'>
             <!-- A <a class='' href="/public/home/word/<?php echo $word ?>123">long</a> -->
-            <?php echo $wordObj->mean ?>
+            <?php echo $wordObj->meanWithLinks ?>
         </div>
         <!-- stat -->
         <div class="w3-large w3-border-top w3-border-blue w3-left-align w3-padding-small">
@@ -20,15 +20,20 @@
     <div style="margin-top:1em;"></div>
     <!-- recommend words -->
     <div class="w3-border w3-border-green w3-padding-small">
-        <div class="w3-xlarge w3-left-align">Up to level 5:</div>
-        <div class="w3-xlarge">
-            <a href="/long">long</a> <a href="/long">long</a> <a href="/long">long</a>
+        <div class="w3-xlarge w3-left-align">Up to level <?php echo $Stats->level ?>:</div>
+        <div class="w3-xlarge upper">
+            <?php foreach ($LowSeeWords as $Word): ?>
+                <a href="/public/home/word/<?php echo $Word->word ?>">
+                    <?php echo $Word->word ?>
+                </a>
+                <br>
+            <?php endforeach; ?>    
         </div>
     </div>
     <!-- level -->
     <div class="w3-border-left w3-border-right w3-border-green w3-large w3-left-align w3-padding-small">
-        Your level: 4.<br>
-        Highest word saw: 499.
+        Your level: <?php echo $Stats->level ?>.<br>
+        Highest word saw: <?php echo $Stats->highest ?>.
     </div>
     <!-- home -->
     <div class="w3-border-left w3-border-right w3-border-green">

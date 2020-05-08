@@ -19,8 +19,15 @@ class Home extends BaseController
 	public function word($word='empty')
 	{
 		$model = new WordModel();
+		$wordObj =  $model->GetWord($word);
+		$len = strlen($wordObj->word);
+		$classWordSize = 'w3-jumbo';
+		if($len>=7) $classWordSize = 'w3-xxxlarge';
+		if($len>=10) $classWordSize = 'w3-xxlarge';
+		if($len>=13) $classWordSize = 'w3-xlarge';
 		$data= array(
-			'wordObj'=> $model->GetWord($word),
+			'wordObj'=> $wordObj,
+			'classWordSize'=> $classWordSize,
 		);
 		
 		echo view('Header');

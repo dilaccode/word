@@ -7,10 +7,10 @@
 2. run command:<br>
 git config --global user.email "congtk1992@gmail.com" <br>
 git config --global user.name "dilaccode"
-## clone code to XAMPP folder
+## clone code, db to XAMPP folder
 run command on Terminal (any location):<br>
 ```bash
-cd c:\ & RMDIR "C:\xampp\htdocs" /S /Q & MKDIR C:\xampp\htdocs & cd C:\xampp\htdocs & git clone https://github.com/dilaccode/word.git .
+cd c:\ & RMDIR "C:\xampp\htdocs" /S /Q & MKDIR C:\xampp\htdocs & cd C:\xampp\htdocs & git clone https://github.com/dilaccode/word.git . & C:\xampp\mysql\bin\mysql.exe --user=root --password= --host=localhost --port=3306 < "C:\xampp\htdocs\database\word_database.sql"
 ```
 run again if **fail**
 # database , backup work

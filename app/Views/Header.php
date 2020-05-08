@@ -8,5 +8,14 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
+<!-- CSS small -->
+<style>
+a {
+    /* text-decoration: none; */
+    /* font-weight: bold; */
+}
+</style>
+<!-- / CSS small -->
+
 <!-- body begin, end at Footer -->
-<body class="w3-center">
+<body>

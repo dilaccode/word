@@ -8,6 +8,8 @@
         <div class='w3-xxlarge'>
             <!-- A <a class='' href="/public/home/word/<?php echo $word ?>123">long</a> -->
             <?php echo $wordObj->meanWithLinks ?>
+            <br>
+            <?php echo $wordObj->mean ?>
         </div>
         <!-- stat -->
         <div class="w3-large w3-border-top w3-border-blue w3-left-align w3-padding-small">

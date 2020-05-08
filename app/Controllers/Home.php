@@ -34,10 +34,12 @@ class Home extends BaseController
 		$meanArrayRaw = explode(" ",$wordObj->mean);
 		$meanArrayRawResult = array();
 		foreach($meanArrayRaw as $WordRaw){
-			$WordRawResult="";
+			$WordRawResult = $WordRaw; // default
 			foreach($wordObj->meanArrayStatus as $WordHaveStatus){
 				// check contain
-				if(strpos($WordRaw, $WordHaveStatus->word) !== false){
+				$isContain = strpos($WordRaw, $WordHaveStatus->word) !== false;
+				$isShortWordInsideLongWord = strlen($WordRaw)-strlen($WordHaveStatus->word) >= 3;
+				if($isContain && !$isShortWordInsideLongWord){
 					if($WordHaveStatus->isExist){
 						$link = "<a href='/public/home/word/$WordHaveStatus->word'>$WordHaveStatus->word</a>";
 						$WordRawResult = str_replace($WordHaveStatus->word,$link,$WordRaw);

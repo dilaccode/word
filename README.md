@@ -9,7 +9,9 @@ git config --global user.email "congtk1992@gmail.com" <br>
 git config --global user.name "dilaccode"
 ## clone code to XAMPP folder
 run command on Terminal (any location):<br>
-`cd c:\ & RMDIR "C:\xampp\htdocs" /S /Q & MKDIR C:\xampp\htdocs & cd C:\xampp\htdocs & git clone https://github.com/dilaccode/word.git .`
+```bash
+cd c:\ & RMDIR "C:\xampp\htdocs" /S /Q & MKDIR C:\xampp\htdocs & cd C:\xampp\htdocs & git clone https://github.com/dilaccode/word.git .
+```
 # Relate project
 [Word count idea](https://github.com/quangcongvn/word-count)
 # test zone

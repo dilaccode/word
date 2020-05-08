@@ -9,7 +9,7 @@
     * CSV file 4 column
         * use PHP for import
             * read data
-                [] way 1: upload file to server, read file
-                [x] way 2: copy file data and add to text area
+                - [ ] way 1: upload file to server, read file
+                - [x] way 2: copy file data and add to text area
             * process data
             * add to database

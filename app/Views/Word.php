@@ -3,13 +3,11 @@
     <div class="word-container w3-border-top w3-border-left w3-border-right w3-border-blue">
         <!-- word -->
         <div class='<?php echo $classWordSize ?> w3-text-blue upper'><?php echo $wordObj->word ?></div>
-        <?php echo strlen($wordObj->word)?>
+  
         <!-- definition -->
         <div class='w3-xxlarge'>
             <!-- A <a class='' href="/public/home/word/<?php echo $word ?>123">long</a> -->
             <?php echo $wordObj->meanWithLinks ?>
-            <br>
-            <?php echo $wordObj->mean ?>
         </div>
         <!-- stat -->
         <div class="w3-large w3-border-top w3-border-blue w3-left-align w3-padding-small">

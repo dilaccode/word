@@ -30,16 +30,16 @@ class Home extends BaseController
 		if($len>=10) $classWordSize = 'w3-xxlarge';
 		if($len>=13) $classWordSize = 'w3-xlarge';
 		// process mean with link
-		// $meanArrayRaw=array();
 		$meanArrayRaw = explode(" ",$wordObj->mean);
 		$meanArrayRawResult = array();
 		foreach($meanArrayRaw as $WordRaw){
 			$WordRawResult = $WordRaw; // default
 			foreach($wordObj->meanArrayStatus as $WordHaveStatus){
-				// check contain
-				$isContain = strpos($WordRaw, $WordHaveStatus->word) !== false;
-				$isShortWordInsideLongWord = strlen($WordRaw)-strlen($WordHaveStatus->word) >= 3;
-				if($isContain && !$isShortWordInsideLongWord){
+				$searchArr = array("(",")",".",",",";","  ");
+				$replaceArr = array("","","","","","");
+				$WordRawClean  = str_replace($searchArr,$replaceArr,$WordRaw);
+				$isEqual = $WordRawClean == $WordHaveStatus->word;
+				if($isEqual){
 					if($WordHaveStatus->isExist){
 						$link = "<a href='/public/home/word/$WordHaveStatus->word'>$WordHaveStatus->word</a>";
 						$WordRawResult = str_replace($WordHaveStatus->word,$link,$WordRaw);

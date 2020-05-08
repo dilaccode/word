@@ -5,10 +5,10 @@
         <div class='<?php echo $classWordSize ?> w3-text-blue upper'><?php echo $wordObj->word ?></div>
   
         <!-- definition -->
-        <div class='mean w3-xxlarge'>
+        <div class='mean w3-xxlarge upper'>
             <?php echo $wordObj->mean; ?>
         </div>
-        <div class='meanWithLinks w3-xxlarge'>
+        <div class='meanWithLinks w3-xxlarge upper'>
             <?php echo $wordObj->meanWithLinks; ?>
         </div>
         <!-- stat -->

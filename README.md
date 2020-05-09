@@ -1,3 +1,6 @@
+# STOP, move to develop [WORD LIKE GAME](https://github.com/dilaccode/word-like-game)
+1. this project:
+  - complete click word on **mean**.
 # [Test SITE](http://localhost/public)
 # Software
 [download all](https://www.dropbox.com/sh/sqtmrit7bmr8auu/AABm4R-uSwsFZZF2L0ERUahKa?dl=1)
